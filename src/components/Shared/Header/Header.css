@@ -1,0 +1,22 @@
+.login{
+    background-color: #0069D9;
+    border-radius: 5px;
+    color: white !important;
+}
+.photoURL{
+    width: 20px;
+    border-radius: 12px;
+}
+.header-container{
+    background-image: url("../../../Image_Icon/Image/Banner.jpg");
+    background-position: center;
+    /* background-attachment: fixed; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+}
+.header-content{
+    color: white;
+    padding: 150px 0px 150px 50px;
+}
