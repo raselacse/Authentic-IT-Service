@@ -4,16 +4,16 @@ import { Link } from 'react-router-dom';
 import './ServiceDetails.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+// import { AnimationWrapper } from 'react-hover-animation'
 
 
 const ServiceDetails = (props) => {
     const { title, image, description, _id } = props.product;
-
     return (
         <>
             <CardDeck className="text-center py-3 mx-0 px-0 col-md-6 col-lg-3">
                 <Card>
-                    <Card.Img variant="top pt-3 m-auto image" src={image} />
+                    <Card.Img className="image" variant="top pt-3 m-auto" src={image} />
                     <Card.Body>
                         <Card.Title>{title}</Card.Title>
                         <Card.Text>{description}</Card.Text>

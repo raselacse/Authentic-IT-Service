@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Button, Card, CardDeck, Nav, Spinner } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Spinner } from 'react-bootstrap';
 import { UserContext } from '../../../App';
 import BookingDetails from '../BookingDetails/BookingDetails';
 import SideBar from '../SideBar/SideBar';
@@ -11,7 +10,7 @@ const BookingList = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     const [loading, setLoading] = useState(true);
     useEffect(() => {
-        fetch('http://localhost:27017/booking?email=' + loggedInUser.email, {
+        fetch('https://morning-island-41503.herokuapp.com/booking?email=' + loggedInUser.email, {
             method: "GET",
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
@@ -30,7 +29,7 @@ const BookingList = () => {
                     <SideBar />
                 </div>
                 <div className="col-lg-10">
-                    <h4 className="mb-3">Book List</h4>
+                    <h4 className="mb-3 ml-3">Book List</h4>
                     {loading ? <div className="text-center"><Spinner animation="border" /></div> :
                         <div className="d-flex">
                             {

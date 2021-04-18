@@ -7,9 +7,8 @@ const MenuBar = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     const [data, setData] = useState([]);
     const [admin, setAdmin] = useState([]);
-    console.log(admin);
     useEffect(() => {
-        fetch('http://localhost:27017/admin')
+        fetch('https://morning-island-41503.herokuapp.com/admin')
             .then(res => res.json())
             .then(data => {
                 setData(data)
@@ -17,16 +16,16 @@ const MenuBar = () => {
             })
     }, [])
 
-    const checkAdmin = () =>{
+    const checkAdmin = () => {
         data.forEach(element => {
-            if(element.email === loggedInUser.email){
+            if (element.email === loggedInUser.email) {
                 setAdmin(element.email)
-            }else{
+            } else {
                 setAdmin(null)
             }
         });
     }
-    
+
     return (
         <>
             <Navbar className="sticky-top" bg="light" expand="lg">
@@ -49,7 +48,7 @@ const MenuBar = () => {
                 </Navbar.Collapse>
             </Navbar>
         </>
-    );    
+    );
 };
 
 export default MenuBar;

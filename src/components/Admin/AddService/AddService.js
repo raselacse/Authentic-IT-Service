@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Button, Nav, Col, Image } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Form, Button, Col } from 'react-bootstrap';
 import './AddService.css'
 import axios from 'axios';
 import { useHistory, useLocation } from 'react-router';
@@ -50,7 +49,7 @@ const AddService = () => {
 
         if (form.checkValidity() === true) {
             const newProduct = Object.assign(data, image);
-            fetch('http://localhost:27017/add-service', {
+            fetch('https://morning-island-41503.herokuapp.com/add-service', {
                 method: 'POST',
                 body: JSON.stringify(newProduct),
                 headers: {
@@ -64,7 +63,7 @@ const AddService = () => {
         <>
             <div className="row p-5">
                 <div className="col-lg-2">
-                    <AdminSideBar/>
+                    <AdminSideBar />
                 </div>
                 <div className="col-lg-10">
                     <div>

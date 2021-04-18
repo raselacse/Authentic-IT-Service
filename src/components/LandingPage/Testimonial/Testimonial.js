@@ -1,6 +1,5 @@
-import { Button, Card, CardDeck } from 'react-bootstrap';
+import { Card, CardDeck } from 'react-bootstrap';
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const Testimonial = (props) => {
     const { name, description, image } = props.product;

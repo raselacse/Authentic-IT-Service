@@ -26,7 +26,7 @@ const MakeAdmin = () => {
         setValidated(true);
 
         if (form.checkValidity() === true) {
-            fetch('http://localhost:27017/make-admin', {
+            fetch('https://morning-island-41503.herokuapp.com/make-admin', {
                 method: 'POST',
                 body: JSON.stringify(admin),
                 headers: {

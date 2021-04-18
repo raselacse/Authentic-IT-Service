@@ -6,7 +6,7 @@ const AdminBookingList = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
-        fetch('http://localhost:27017/all-booking')
+        fetch('https://morning-island-41503.herokuapp.com/all-booking')
             .then(res => res.json())
             .then(data => {
                 setProducts(data)
@@ -46,7 +46,7 @@ const AdminBookingList = () => {
                                                 <option>On Going</option>
                                                 <option>Done</option>
                                             </select>
-                                            </td>
+                                        </td>
                                     </tr>)}
 
                                 </tbody>

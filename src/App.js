@@ -31,33 +31,33 @@ function App() {
           <Route path='/home'>
             <Home />
           </Route>
-          <Route path='/admin'>
+          <PrivateRoute path='/admin'>
             <Admin/>
-          </Route>
-          <Route path='/add-service'>
+          </PrivateRoute>
+          <PrivateRoute path='/add-service'>
             <AddService/>
-          </Route>
-          <Route path='/manage-service'>
+          </PrivateRoute>
+          <PrivateRoute path='/manage-service'>
             <ManageService/>
-          </Route>
-          <Route path="/make-admin">
+          </PrivateRoute>
+          <PrivateRoute path="/make-admin">
             <MakeAdmin/>
-          </Route>
-          <Route path='/book-list'>
+          </PrivateRoute>
+          <PrivateRoute path='/book-list'>
             <AdminBookingList/>
-          </Route>
-          <Route path='/user/:_id'>
+          </PrivateRoute>
+          <PrivateRoute path='/user/:_id'>
             <User/>
-          </Route>
-          <Route path='/book'>
+          </PrivateRoute>
+          <PrivateRoute path='/book'>
             <Book/>
-          </Route>
-          <Route path='/booking-list'>
+          </PrivateRoute>
+          <PrivateRoute path='/booking-list'>
             <BookingList/>
-          </Route>
-          <Route path='/review'>
+          </PrivateRoute>
+          <PrivateRoute path='/review'>
             <AddTestimonial/>
-          </Route>
+          </PrivateRoute>
           <Route path='/login'>
             <Login/>
           </Route>

@@ -5,7 +5,7 @@ const Testimonials = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
-        fetch('http://localhost:27017/testimonial')
+        fetch('https://morning-island-41503.herokuapp.com/testimonial')
             .then(res => res.json())
             .then(data => {
                 setProducts(data)
@@ -20,7 +20,7 @@ const Testimonials = () => {
             {loading ? <div className="text-center"><Spinner animation="border" /></div> :
                 <div className="row justify-content-center align-items-center pt-5">
                     {
-                        products.map(pd => <Testimonial key={pd.key} product={pd}></Testimonial>)
+                        products.map(pd => <Testimonial key={pd._id} product={pd}></Testimonial>)
                     }
                 </div>
                 }

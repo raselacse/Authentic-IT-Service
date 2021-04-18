@@ -10,7 +10,7 @@ const Book = ({ id }) => {
                     <SideBar />
                 </div>
                 <div className="col-lg-10">
-                <h4 className="mb-3">Book</h4>
+                <h4 className="mb-3 ml-3">Book</h4>
                     <Payment keys={id} />
                 </div>
             </div>

@@ -3,10 +3,10 @@ import { useParams } from 'react-router';
 import Book from '../Book/Book';
 
 const User = () => {
-    const { key } = useParams()
+    const { _id } = useParams()
     return (
         <>
-            <Book id={key} />
+            <Book id={_id} />
         </>
     );
 };

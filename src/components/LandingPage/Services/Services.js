@@ -5,7 +5,7 @@ const Services = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
-        fetch('http://localhost:27017/services')
+        fetch('https://morning-island-41503.herokuapp.com/services')
             .then(res => res.json())
             .then(data => {
                 setProducts(data)

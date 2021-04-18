@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Button, Col, Form, Nav } from 'react-bootstrap';
-import { Link, useHistory, useLocation } from 'react-router-dom';
+import { Button, Col, Form } from 'react-bootstrap';
+import { useHistory, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import SideBar from '../SideBar/SideBar';
 
@@ -48,7 +48,7 @@ const AddTestimonial = () => {
 
         if (form.checkValidity() === true) {
             const newProduct = Object.assign(data, image);
-            fetch('http://localhost:27017/add-testimonial', {
+            fetch('https://morning-island-41503.herokuapp.com/add-testimonial', {
                 method: 'POST',
                 body: JSON.stringify(newProduct),
                 headers: {
@@ -62,7 +62,7 @@ const AddTestimonial = () => {
         <>
             <div className="row p-5">
                 <div className="col-lg-2 aside">
-                    <SideBar/>
+                    <SideBar />
                 </div>
                 <div className="col-lg-10">
                     <div>

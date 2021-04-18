@@ -1,5 +1,5 @@
 # Authentic - IT Service
-There are various collections available on our web site such as men cloth, women Cloth, Jewelry, Electronics etc. You can also add the product of your choice to our website and unfortunately, if you don't like any of the products on our website, you can delete them from our website.!! If you are an admin user.
+Here we provide a variety of IT related services such as IT Solutions, Security System, Development, Database System etc. We have the services of the most skilled developers. If you want, you can visit our literature. Where you can see our services in more detail and find out about our blog and also about our developer. Find out more about company If you want you can contact us directly at the address below.
 ## Used for web applications
 * html
 * css
@@ -8,4 +8,4 @@ There are various collections available on our web site such as men cloth, women
 * node js
 * mongodb
 
-#### You can check the live app: [My app]()
+#### You can check the live app: [My app](https://authentic---it-service.web.app/)

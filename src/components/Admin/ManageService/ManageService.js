@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Nav, Button, Jumbotron, Table, Image, Spinner } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Button, Jumbotron, Table, Spinner } from 'react-bootstrap';
 import AdminSideBar from '../AdminSideBar/AdminSideBar';
 import './ManageService.css'
 
@@ -9,7 +8,7 @@ const ManageService = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('http://localhost:27017/manage-service')
+        fetch('https://morning-island-41503.herokuapp.com/manage-service')
             .then(res => res.json())
             .then(data => {
                 setProducts(data)
@@ -17,7 +16,7 @@ const ManageService = () => {
             })
     }, [])
     const deleteProduct = (e, id) => {
-        fetch('http://localhost:27017/delete/' + id, {
+        fetch('https://morning-island-41503.herokuapp.com/delete/' + id, {
             method: "DELETE",
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',

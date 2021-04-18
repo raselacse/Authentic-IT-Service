@@ -8,7 +8,7 @@ import {
 } from "@stripe/react-stripe-js";
 import './Payment.css'
 import { UserContext } from "../../../App";
-import { useHistory, useLocation, useParams } from "react-router";
+import { useHistory, useLocation } from "react-router";
 
 
 
@@ -108,6 +108,7 @@ const ResetButton = ({ onClick }) => (
 
 const CheckoutForm = (code) => {
   const key = code.code;
+  console.log(key);
   const stripe = useStripe();
   const elements = useElements();
   const [error, setError] = useState(null);
@@ -121,23 +122,23 @@ const CheckoutForm = (code) => {
   });
 
   const [loggedInUser, setLoggedInUser] = useContext(UserContext)
-    const [service, setService] = useState([]);
-    useEffect(() => {
-        fetch('http://localhost:27017/services')
-            .then(res => res.json())
-            .then(data => {
-                setService(data)
-            })
-    }, [])
-    const product = service.find(pd => pd.key === key)
+  const [service, setService] = useState([]);
+  useEffect(() => {
+    fetch('https://morning-island-41503.herokuapp.com/services')
+      .then(res => res.json())
+      .then(data => {
+        setService(data)
+      })
+  }, [])
+  const product = service.find(pd => pd._id === key)
 
   let history = useHistory();
   let location = useLocation();
   let { from } = location.state || { from: { pathname: "/" } };
 
   const postData = () => {
-    const newProduct = Object.assign(product,billingDetails);
-    fetch('http://localhost:27017/add-booking', {
+    const newProduct = Object.assign(product, billingDetails);
+    fetch('https://morning-island-41503.herokuapp.com/add-booking', {
       method: 'POST',
       body: JSON.stringify(newProduct),
       headers: {
@@ -198,8 +199,9 @@ const CheckoutForm = (code) => {
         Payment successful
       </div>
       <div className="ResultMessage">
-        Thanks for trying Stripe Elements. No money was charged, but we
-        generated a PaymentMethod: {paymentMethod.id}
+        {/* Thanks for trying Stripe Elements. No money was charged, but we
+        generated a PaymentMethod: {paymentMethod.id} */}
+        <h1>Thanks for staying with us</h1>
       </div>
       <ResetButton onClick={reset} />
     </div>
@@ -272,12 +274,12 @@ const ELEMENTS_OPTIONS = {
 const stripePromise = loadStripe("pk_test_6pRNASCoBOKtIshFeQd4XMUh");
 
 
-const Payment = ({keys}) => {
-  
+const Payment = ({ keys }) => {
+
   return (
     <div className="AppWrapper">
       <Elements stripe={stripePromise} options={ELEMENTS_OPTIONS}>
-        <CheckoutForm code={keys}/>
+        <CheckoutForm code={keys} />
       </Elements>
     </div>
   );
