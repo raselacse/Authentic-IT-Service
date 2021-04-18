@@ -12,7 +12,8 @@ const AddService = () => {
 
     const [data, setData] = useState({
         title: "",
-        description: ""
+        description: "",
+        price: ""
     })
     const [image, setImage] = useState({
         image: ""
@@ -74,6 +75,10 @@ const AddService = () => {
                                 <Form.Group as={Col} hasValidation>
                                     <Form.Label>Service Title</Form.Label>
                                     <Form.Control onChange={(e) => hangleValue(e)} id="title" value={data.title} type="text" placeholder="Enter Title" required />
+                                </Form.Group>
+                                <Form.Group as={Col} hasValidation>
+                                    <Form.Label>Service Price</Form.Label>
+                                    <Form.Control onChange={(e) => hangleValue(e)} id="price" value={data.price} type="number" placeholder="Enter Price" required />
                                 </Form.Group>
                                 <Form.Group as={Col}>
                                     <Form.Label>Add Photo</Form.Label>

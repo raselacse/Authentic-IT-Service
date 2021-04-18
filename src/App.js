@@ -55,6 +55,9 @@ function App() {
           <PrivateRoute path='/booking-list'>
             <BookingList/>
           </PrivateRoute>
+          <PrivateRoute path='/dashboard'>
+            <BookingList/>
+          </PrivateRoute>
           <PrivateRoute path='/review'>
             <AddTestimonial/>
           </PrivateRoute>

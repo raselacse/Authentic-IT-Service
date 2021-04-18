@@ -2,3 +2,8 @@
     height: 150px;
     width: 150px;
 }
+.service:hover{
+    transform: scale(1.01);
+    box-shadow: 3px 5px 40px -20px;
+    transition: .5s;
+}

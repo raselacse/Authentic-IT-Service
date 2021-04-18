@@ -9,6 +9,7 @@ import {
 import './Payment.css'
 import { UserContext } from "../../../App";
 import { useHistory, useLocation } from "react-router";
+import { Form, Jumbotron, Spinner, Table } from "react-bootstrap";
 
 
 
@@ -108,7 +109,6 @@ const ResetButton = ({ onClick }) => (
 
 const CheckoutForm = (code) => {
   const key = code.code;
-  console.log(key);
   const stripe = useStripe();
   const elements = useElements();
   const [error, setError] = useState(null);
@@ -120,7 +120,6 @@ const CheckoutForm = (code) => {
     phone: "",
     name: ""
   });
-
   const [loggedInUser, setLoggedInUser] = useContext(UserContext)
   const [service, setService] = useState([]);
   useEffect(() => {
@@ -130,8 +129,7 @@ const CheckoutForm = (code) => {
         setService(data)
       })
   }, [])
-  const product = service.find(pd => pd._id === key)
-
+  const product = service.find(pd => pd._id === key);
   let history = useHistory();
   let location = useLocation();
   let { from } = location.state || { from: { pathname: "/" } };
@@ -206,8 +204,27 @@ const CheckoutForm = (code) => {
       <ResetButton onClick={reset} />
     </div>
   ) : (
+    
     <form className="Form" onSubmit={handleSubmit}>
       <fieldset className="FormGroup">
+      <Field
+          label="Service"
+          id="name"
+          type="text"
+          placeholder="Jane Doe"
+          required
+          autoComplete="name"
+          value={code.title}
+        />
+      <Field
+          label="Charged"
+          id="name"
+          type="text"
+          placeholder="Jane Doe"
+          required
+          autoComplete="name"
+          value={code.price}
+        />
         <Field
           label="Name"
           id="name"
@@ -273,13 +290,11 @@ const ELEMENTS_OPTIONS = {
 // recreating the `Stripe` object on every render.
 const stripePromise = loadStripe("pk_test_6pRNASCoBOKtIshFeQd4XMUh");
 
-
-const Payment = ({ keys }) => {
-
+const Payment = ({keys, title, price}) => {
   return (
     <div className="AppWrapper">
       <Elements stripe={stripePromise} options={ELEMENTS_OPTIONS}>
-        <CheckoutForm code={keys} />
+        <CheckoutForm title={title} price={price} code={keys}/>
       </Elements>
     </div>
   );

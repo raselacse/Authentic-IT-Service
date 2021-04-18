@@ -6,8 +6,8 @@ const Testimonial = (props) => {
 
     return (
         <>
-            <CardDeck className="text-center py-3 mx-0 px-0 col-md-6 col-lg-3">
-                <Card>
+            <CardDeck className="text-center py-3 mx-0 px-0 col-md-6 col-lg-3 ">
+                <Card className="shadow-lg p-3 mb-5 bg-body rounded" style={{border: "none"}}>
                     <Card.Img style={{height: "250px"}} variant="top" src={image} />
                     <Card.Body>
                         <Card.Title>{name}</Card.Title>
